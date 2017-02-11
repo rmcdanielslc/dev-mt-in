@@ -12,26 +12,57 @@
 <body ng-controller="mainController">
 	<div class='topNav'>
 		<input type="text" name="search" placeholder="Search..">
-		<p>DevMountain Social</p>
-		<button>i</button>
+		<p ng-click="togglePage('initial')">DevMountain Social</p>
+		<button ng-click="togglePage('home')">Home</button>
 	</div>
 
-	<div class="mainContent">
+	<div class="mainContent" ng-show="initial">
 		<p>Welcome to DevMountain Social</br></br>
 			Add some info so your friends can find you</p>
-			<input type="text" name="Full Name" placeholder="Full Name">
-			<input type="text" name="Tagline" placeholder="Tagline">
-			<input type="text" name="Profile Image URL" placeholder="Profile Image URL">
-			<input type="text" name="Bio" placeholder="Bio">
-			<button>Save Changes</button>
+			<input ng-model="user.myName" type="text" name="Full Name" placeholder="Full Name">
+			<input ng-model="user.tagline" type="text" name="Tagline" placeholder="Tagline">
+			<input ng-model="user.profileUrl" type="text" name="Profile Image URL" placeholder="Profile Image URL">
+			<input ng-model="user.bio" type="text" name="Bio" placeholder="Bio">
+			<button ng-click="createUser(user)">Save Changes</button>
 	</div>
 
-	<div ng-show="view">
+	<div class="homeScreen" ng-show="home">
+			<div class="profileText">
+				<h1>{{defaultUser.myName}}</h1>
+				<h2>{{defaultUser.tagline}}</h2>
+				<h3>{{defaultUser.bio}}</h3>
+			</div>
+		<div homeImage>
+			<img src={{defaultUser.profileUrl}} alt="image">
+		</div>
 	</div>
-	<div ng-show="find">
+
+	<div class="viewScreen" ng-show="view" >
+		<div class="profileText">
+			<h1>{{defaultUser.myName}}</h1>
+			<h2>{{defaultUser.tagline}}</h2>
+			<h3>{{defaultUser.bio}}</h3>
+		</div>
 	</div>
-	<div ng-show="update">
+
+	<div class="findScreen" ng-show="find">
+		<div class="profileText">
+			<h1>{{defaultUser.myName}}</h1>
+			<h2>{{defaultUser.tagline}}</h2>
+			<h3>{{defaultUser.bio}}</h3>
+		</div>
+		<div class="friendViewer" ng-repeat="profile in profiles">
+			<img src="{{profile.profileUrl}}" alt="profile image">
 	</div>
+	</div>
+
+	<div class="updateScreen" ng-show="update">
+		<div class="profileText">
+		<h1>{{defaultUser.myName}}</h1>
+		<h2>{{defaultUser.tagline}}</h2>
+		<h3>{{defaultUser.bio}}</h3>
+	</div>
+</div>
 
 <div class="bottomNav">
 	<p ng-class="{selected: view}" ng-click="togglePage('view')">View Friends</p>
