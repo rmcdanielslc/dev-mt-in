@@ -11,6 +11,7 @@ $scope.togglePage = function(displayView){
     }
   })
   }
+
  $scope.createUser = function(user) {
    $scope.defaultUser = user;
    $scope.user = {};

@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  background-color: black;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -11,14 +12,21 @@ body {
   flex-direction: column;
   max-width: 1000px;
   width:1000px;
-  height:1000px;
+  height:690px;
+  background-image: url('images/main_bg.jpg');
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+
+
 }
 
 .topNav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height:40px;
+  height:30px;
+  background-color: inherit;
 }
 
 .topNav > p {
@@ -26,6 +34,7 @@ body {
   font-size: 20px;
   font-family: 'Lobster', cursive;
   cursor: pointer;
+  line-height: 10px;
 
 
 }
@@ -53,24 +62,23 @@ body {
   padding: 12px 20px 12px 40px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
+
 }
 input[type=text]:focus {
     width: 250px;
 }
 
 .mainContent {
-  background-color: white;
-  background-repeat: no-repeat;
-  background-image: url('images/triangles.jpg');
-  background-position: right;
-  background-size: auto;
-  width:100%;
+  background-color: inherit;
+  width:800px;
   height: 550px;
   display: flex;
   flex-direction: column;
   padding-top: 50px;
   font-size: 25px;
   font-family: 'Lobster', cursive;
+  color: white;
+  margin-left: 150px;
 }
 
 .mainContent > input {
@@ -86,6 +94,8 @@ input[type=text]:focus {
 input[name="Bio"]{
   height:200px;
   width:250px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 .mainContent > button {
 width:100px;
@@ -95,34 +105,61 @@ color: white;
 background-color: #7DD3F1;
 }
 
-.homescreen {
+.homeScreen {
   height: 550px;
   width: 1000px;
   display: flex;
-  flex-direction: row;
+  background-repeat: no-repeat;
+  background-image: url('images/triangles.jpg');
+  background-position: right;
+  background-size: auto;
+
 }
 .profileText {
   flex-direction: column;
   flex-wrap: wrap;
-  width: 50%;
+
   height: 550px;
+
 }
-.homeImage {
-  width: 50%;
-  height: 550px;
+.profileText > h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 30px;
+  margin-left: 25px;
+  margin-top: 50px;
+  color: #7DD3F1;
+
+}
+.profileText > h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  border-bottom: : 1px solid grey;
+  width:30%;
+  margin-left: 25px;
 }
 
-.homeImage > img {
-background-size: contain;
-width: 100%;
-height: 100%;
+.profileText > h3 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 12px;
+  border: 2px solid grey;
+  width: 30%;
+  height: 200px;
+  margin-left: 25px;
+  color: grey;
 }
+
+.homescreen > img {
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 
 
 .bottomNav {
   display: flex;
   justify-content: space-around;
-  color: grey;
+  color: white;
   border-top: 1px;
   border-color: grey;
   flex-direction: row;
