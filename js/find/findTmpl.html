@@ -1,0 +1,11 @@
+<div class="findScreen" ng-show="find">
+  <div class="profileText">
+    <h1>{{defaultUser.myName}}</h1>
+    <h2>{{defaultUser.tagline}}</h2>
+    <h3>{{defaultUser.bio}}</h3>
+  </div>
+  <div class="friendViewer" ng-repeat="profile in profiles">
+    <img src="{{profile.profileUrl}}" alt="profile image">
+    {{profile.fullName}}
+</div>
+</div>

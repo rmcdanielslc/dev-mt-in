@@ -18,8 +18,6 @@ $scope.togglePage = function(displayView){
  }
 
 
-
-
   $scope.profiles = [{
      fullName: 'Dog',
      tagline: 'Woof Woof',
